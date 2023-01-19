@@ -1,0 +1,48 @@
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Search your favourite mobile and buy.
+        you can sell your product also.
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<div class="gadget-index-grid pt4">
+  <% @gadgets.each do |gadget| %>
+    <div class="gadget border-light">
+      <div class="gadget-thumb">
+
+      
+
+      <% if gadget.condition? %>
+
+        <div class="condition">
+          <span class="tag is-dark"><%= gadget.condition %></span>
+        </div>
+
+      <% end %>
+
+    </div>
+      
+    <div class="pa3">
+      <h3 class="fw7 f4 title"><%= link_to gadget.title, gadget %></h3>
+      <p class="has-text-gray fg pt1">Sold by <%= gadget.user.name %></p>
+      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(gadget.price) %></p>
+
+      <% if gadget_author(gadget) %>
+        <%= link_to 'Edit', edit_gadget_path(gadget), class: "button is-link" %>
+        
+
+        <%= link_to "Delete", @gadget, data: { 'turbo-method': :delete, 'turbo-confirm': 'Are you sure?' } ,class: "button is-danger "%>
+      <% end %>
+
+    </div>
+  </div>
+
+
+  <% end %>
+</div>

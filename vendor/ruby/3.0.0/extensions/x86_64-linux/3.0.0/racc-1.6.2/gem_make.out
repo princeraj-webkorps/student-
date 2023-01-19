@@ -1,0 +1,17 @@
+current directory: /home/prince/Downloads/Snb/vendor/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+/home/prince/.rvm/rubies/ruby-3.0.0/bin/ruby -I /home/prince/.rvm/rubies/ruby-3.0.0/lib/ruby/site_ruby/3.0.0 extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/prince/Downloads/Snb/vendor/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230112-108400-ryy9oa sitelibdir\=./.gem.20230112-108400-ryy9oa clean
+
+current directory: /home/prince/Downloads/Snb/vendor/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230112-108400-ryy9oa sitelibdir\=./.gem.20230112-108400-ryy9oa
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/prince/Downloads/Snb/vendor/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230112-108400-ryy9oa sitelibdir\=./.gem.20230112-108400-ryy9oa install
+/usr/bin/install -m 0755 cparse.so ./.gem.20230112-108400-ryy9oa/racc

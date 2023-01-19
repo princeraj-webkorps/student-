@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BnsApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="<%= yield(:body_class)%>">
+    <% if flash[:notice] %>
+      <div class="notofication is-success global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notofication is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to root_path, class:"navbar-item" do %>
+    
+      <img src="https://thumbs.dreamstime.com/z/bns-letter-initial…tion-bns-letter-initial-logo-design-236622107.jpg" width="112" height="28">
+    <% end %>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        <a class="navbar-item" <%= link_to "Become Seller",  new_gadget_path(@user) %></a>
+        
+        
+      </a>
+
+      <a class="navbar-item">
+        
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+          BECOME A SELLER
+          </a>
+          <a class="navbar-item">
+            DETAILS
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <a class="navbar-item">
+            REPORT AN ISSUE
+          </a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+
+        <% if user_signed_in? %>
+            
+        <%= link_to "Log Out" , destroy_user_session_path(@user), data: { turbo_method: :delete}, class: "button is-success"  %> </a>
+        
+        
+        <%else%>
+        
+        <%= link_to "Sign up",  new_user_registration_path(@user), class: "button is-success" %>
+        <%= link_to "Log in",  new_user_session_path(@user), class: "button is-success" %>
+        <%end%>
+          
+          
+            
+          
+            
+                
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<%= yield(:header) %>
+<div class="container">
+
+    <%= yield %>
+</div>
+  </body>
+
+  
+
+</html>
